@@ -25,7 +25,7 @@ int menu()
 
 void req(std::string code, int choice)
 {
-	std::string fivem{ "https://cfx-finder.com/api/getServerDetails?code=" + code };
+	std::string fivem{ "https://frontend.cfx-services.net/api/servers/single/" + code };
 	cpr::Response query = cpr::Get(cpr::Url{ fivem },
 	cpr::Header{{"User-Agent", "Mozilla/5.0"}});
 		auto parse = json::parse(query.text);
